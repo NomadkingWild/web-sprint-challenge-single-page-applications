@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import {useHistory, Route, Switch, BrowserrRouter as Router} from 'react-router-dom';
 import axios from 'axios';
-// import Toppings from './Server';
+import * as yup from 'yup';
 import Pizza from './components/Pizza';
 import PizzaForm from './components/PizzaForm';
 import SavedPizza from './components/SavedPizza';
-
+import PizzaList from './components/PizzaList';
 
 const App = () => {
   const [saved,  setSaved]= useState([]);

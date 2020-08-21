@@ -106,7 +106,7 @@ const checkboxChange = (name, isChecked)=>{
 const submit = () =>{
   const newPizza ={
     Name: formValues.name,
-    crust: formValues.phone,
+    phone: formValues.phone,
     sauce: formValues.sauce,
     toppings: Object.keys(formValues.toppings).filter(
       (hob) => formValues.toppings[hob]

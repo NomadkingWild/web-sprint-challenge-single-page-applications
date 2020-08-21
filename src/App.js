@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useHistory, Route, Switch, BrowserrRouter as Router} from 'react-router-dom';
 import axios from 'axios';
-import Toppings from './components/Toppings';
+// import Toppings from './Server';
 import Pizza from './components/Pizza';
 import PizzaForm from './components/PizzaForm';
 import SavedPizza from './components/SavedPizza';
@@ -16,19 +16,24 @@ const App = () => {
   }
   useEffect(()=>{
     const getPizza = () => {
-      axios.get('(https://reqres.in/pizza)')
+      axios.get('(http://localhost:3000/api/pizza)')
       .then(res=>{
         setPizza(res.data);
       })
       .catch(err =>{
         console.log(err)
-      })
+      });
     }
-  })
+    getPizza();
+  },[]);
+
   return (
     <>
       <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <Switch>
+        <Route path= '/pizzas/:id'><Pizza pizzas={pizza}/></Route>
+        <Route path='/'><Pizza pizzas={pizza}/></Route>
+      </Switch>
     </>
   );
 };

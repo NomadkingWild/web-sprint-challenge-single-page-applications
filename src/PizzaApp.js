@@ -40,10 +40,8 @@ const App = () => {
   const [formErrors, setFormErrors]= useState(initialFormErrors)
   const[disabled, setDisabled]=useState(initialDisabled)
   const[pizza, setPizza]=useState(initialPizzas);
-  const history = useHistory()
-  const routeToHome = () =>{
-    history.push('/');
-  }
+
+  
 
   
   useEffect(()=>{

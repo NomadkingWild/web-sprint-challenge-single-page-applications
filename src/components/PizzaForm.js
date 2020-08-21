@@ -175,6 +175,7 @@ return(
             <option value='pickup'>Pickup</option>
             </select>
     </label>
+    <button>Submit</button>
     /</div>
 </form>
 )

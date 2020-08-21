@@ -16,6 +16,7 @@ const App = () => {
       <h1>Lambda Eats</h1>
       <img src={image} alt= "pizza"></img>
       <Route path="/pizza" component={PizzaApp}/>
+      
     </>
   );
 };

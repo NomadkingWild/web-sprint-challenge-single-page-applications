@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import './App.css'
 import Pizza from './components/Pizza';
 import PizzaForm from './components/PizzaForm';
-import formSchema from './Validation/formSchema'
+// import formSchema from './Validation/formSchema'
 
 
 const initialFormValues={
@@ -48,7 +48,7 @@ const App = () => {
   
   useEffect(()=>{
     const getPizza = () => {
-      axios.get('(https://reqres.in/api/pizzas))')
+      axios.get('https://reqres.in/api/')
       .then(res=>{
         setPizza(res.data);
       })
@@ -71,22 +71,22 @@ const postNewPizza = newPizza=>{
   })
 }
 const inputChange = (name,value)=>{
-  yup
-  .reach(formSchema, name)
-  .validate(value)
-  .then(valid=>{
-    setFormErrors({
-      ...formErrors,
-      [name]: "",
-    })
-  })
+  // yup
+  // .reach(formSchema, name)
+  // .validate(value)
+  // .then(valid=>{
+  //   setFormErrors({
+  //     ...formErrors,
+  //     [name]: "",
+  //   })
+  // })
 
-  .catch(err=>{
-    setFormErrors({
-      ...formErrors,
-      [name]: err.errors[0],
-    })
-  })
+  // .catch(err=>{
+  //   setFormErrors({
+  //     ...formErrors,
+  //     [name]: err.errors[0],
+  //   })
+  // })
 
   setFormValues({
     ...formValues,
@@ -125,12 +125,12 @@ useEffect(()=>{
  console.log(pizza) 
 },[pizza])
 
-useEffect(()=>{
-  formSchema.isValid(formValues)
-  .then(valid=>{
-    setDisabled(!valid);
-  })
-},[formValues])
+// useEffect(()=>{
+//   formSchema.isValid(formValues)
+//   .then(valid=>{
+//     setDisabled(!valid);
+//   })
+// },[formValues])
 
 
   return (

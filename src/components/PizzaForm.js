@@ -24,44 +24,125 @@ const onInputChange = evt =>{
 }
 return(
     <form className= 'form container' onSubmit={onSubmit}>
-    <div className='form submit'>
-        <h2>Order a Pizza</h2>
-        <button className='submitBtn' disabled={disabled}>submit</button>
-        <div className='errors'>
-            <div>{errors.crust}</div>
-            <div>{errors.sauce}</div>
-            <div>{errors.toppings}</div>
-            <div>{errors.extras}</div>
-            <div>{errors.orders}</div>
-        </div>
-    </div>
-
     <div className='form inputs'>
     <h3>Order</h3>
-    <label>crust&nbsp;
+    <label>name&nbsp;
         <input
-        value={values.crust}
+        value={values.name}
         onChange={onInputChange}
-        name='crust'
+        name='name'
         type='text'
         />
     </label>
-    <label>sauce&nbsp;
+    <label>phone number&nbsp;
         <input
-        value={values.sauce}
+        value={values.phone}
         onChange={onInputChange}
-        name='sauce'
-        type='text'
+        name='phone'
+        type='phone'
         />
     </label>
-    <label>toppings&nbsp;
-        <input
-        value={values.toppings}
-        onChange={onInputChange}
-        name='toppings'
-        type='text'
-        />
+    <label>Pie Size
+    <select onChange={onInputChange} value={values.size}>
+        <option selected value='select'>
+            Pick A Size
+        </option>
+        <option value='persoonal'>Personal Pan</option>
+        <option value='small'>Small</option>
+        <option value='med'>Medium</option>
+        <option value='large'>Large</option>
+        <option value='xl'>Extra Large</option>
+    </select>
     </label>
+        <h3>Pick a Sauce</h3>
+        <label>Og Red
+            <input
+            type="radio"
+            name="sauce"
+            value="red"
+            checked={values.sauce === "red"}
+            onChange={onInputChange}
+            />
+        </label>
+        <label>Garlic
+            <input
+            type="radio"
+            name="sauce"
+            value="garlic"
+            checked={values.sauce === "garlic"}
+            onChange={onInputChange}
+            /> 
+        </label>
+        <label>BBQ Sauce
+            <input
+            type="radio"
+            name="sauce"
+            value="bbq"
+            checked={values.sauce === "bbq"}
+            onChange={onInputChange}
+            />
+        </label>
+        <label >White Sauce
+            <input
+            type="radio"
+            name="sauce"
+            value="white"
+            checked={values.sauce === "white"}
+            onChange={onInputChange}
+            />
+        </label>
+        <h3>Choose a Topping</h3>
+        <label>Pepperoni
+          <input
+            type="checkbox"
+            name="pepperoni"
+            checked={values.toppings.pepperoni}
+            onChange={onCheckboxChange}
+          />
+        </label>
+        <label>Pineapple
+          <input
+            type="checkbox"
+            name="pineapple"
+            checked={values.toppings.pineapple}
+            onChange={onCheckboxChange}
+          />
+        </label>
+
+        <label>
+          Sausage
+          <input
+            type="checkbox"
+            name="ham"
+            checked={values.toppings.sausage}
+            onChange={onCheckboxChange}
+          />
+        </label>
+        <label>Olives
+          <input
+            type="checkbox"
+            name="olives"
+            checked={values.toppings.olives}
+            onChange={onCheckboxChange}
+          />
+        </label>
+        <label>Bacon
+          <input
+            type="checkbox"
+            name="bacon"
+            checked={values.toppings.bacon}
+            onChange={onCheckboxChange}
+          />
+        </label>
+
+        <label>Parmeasan
+          <input
+            type="checkbox"
+            name="parm"
+            checked={values.toppings.cheddar}
+            onChange={onCheckboxChange}
+          />
+        </label>
    < label>Extras
    <select
         onChange={onInputChange}
@@ -69,12 +150,20 @@ return(
         name='extras'
         >
             <option value=''> Options</option>
-            <option value='initial'>Extra Cheese</option>
-            <option value='rough'>Extra Sauce</option>
-            <option value='pr'>Extra toppings</option>
-            <option value='paid'>Project Paid for and Completed</option>
+            <option value='ec'>Extra Cheese</option>
+            <option value='es'>Extra Sauce</option>
+            <option value='et'>Extra toppings</option>
+            <option value='none'>none</option>
             </select>
 </label>
+<label>Special Intructions:
+            <input
+            type="text"
+            name="special"
+            value={values.special}
+            onChange={onInputChange}
+            />
+        </label>
     <label>Order type
         <select
         onChange={onInputChange}

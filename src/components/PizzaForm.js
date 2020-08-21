@@ -25,13 +25,14 @@ const onInputChange = evt =>{
 return(
     <form className= 'form container' onSubmit={onSubmit}>
     <div className='form submit'>
-        <h2>Add a Client</h2>
+        <h2>Order a Pizza</h2>
         <button className='submitBtn' disabled={disabled}>submit</button>
         <div className='errors'>
-            <div>{errors.firstname}</div>
-            <div>{errors.lastname}</div>
-            <div>{errors.email}</div>
-            <div>{errors.role}</div>
+            <div>{errors.crust}</div>
+            <div>{errors.sauce}</div>
+            <div>{errors.toppings}</div>
+            <div>{errors.extras}</div>
+            <div>{errors.orders}</div>
         </div>
     </div>
 
@@ -61,13 +62,13 @@ return(
         type='text'
         />
     </label>
-   < label>
+   < label>Extras
    <select
         onChange={onInputChange}
         value={values.extras}
         name='extras'
         >
-            <option value=''>Extra Options</option>
+            <option value=''> Options</option>
             <option value='initial'>Extra Cheese</option>
             <option value='rough'>Extra Sauce</option>
             <option value='pr'>Extra toppings</option>

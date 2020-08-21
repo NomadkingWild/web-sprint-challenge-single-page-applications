@@ -7,13 +7,34 @@ import PizzaForm from './components/PizzaForm';
 import SavedPizza from './components/SavedPizza';
 import PizzaList from './components/PizzaList';
 
+const initialFormValues={
+  crust:'',
+  sauce:'',
+  toppings:'',
+  extras:'',
+  order:'',
+}
+const initialFormErrors ={
+  crust:'',
+  sauce:'',
+  toppings:'',
+  extras:'',
+  order:'',
+}
+const initialPizzas =[]
+const initialDisabled = true
 const App = () => {
+  const [formValues, setFormValues]= useState(initialFormValues)
+  const [formErrors, setFormErrors]= useState(initialFormErrors)
   const [saved,  setSaved]= useState([]);
-  const[pizza, setPizza]=useState([]);
+  const[disabled, setDisabled]=useState(initialDisabled)
+  const[pizza, setPizza]=useState(initialPizzas);
   const history = useHistory()
   const routeToHome = () =>{
     history.push('/');
   }
+
+  
   useEffect(()=>{
     const getPizza = () => {
       axios.get('(http://localhost:3000/api/pizza)')

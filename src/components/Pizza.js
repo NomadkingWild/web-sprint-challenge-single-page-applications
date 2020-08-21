@@ -7,9 +7,9 @@ function Pizza({ details }) {
 
   return (
     <div className="pizza-container">
-        <p>Name of Order: {details.name}</p>
+        <p>Name of Order: {details.names}</p>
         <p>Phone Number: {details.phone}</p>
-       <p>Size:{details.size}</p>
+       <p>Size:{details.sizes}</p>
       <p>Sauce: {details.sauce}</p>
       
 

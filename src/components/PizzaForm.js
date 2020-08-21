@@ -6,8 +6,7 @@ const{
     submit,
     inputChange,
     checkboxChange,
-    disabled,
-    errors,
+  
 }= props
 
 const onSubmit = evt =>{
@@ -26,15 +25,15 @@ return(
     <form className= 'form container' onSubmit={onSubmit}>
     <div className='form inputs'>
     <h3>Order</h3>
-    <label>name&nbsp;
+    <label>name:&nbsp;
         <input
-        value={values.name}
+        value={values.names}
         onChange={onInputChange}
         name='name'
         type='text'
         />
     </label>
-    <label>phone number&nbsp;
+    <label>phone number:&nbsp;
         <input
         value={values.phone}
         onChange={onInputChange}
@@ -42,8 +41,8 @@ return(
         type='phone'
         />
     </label>
-    <label>Pie Size
-    <select onChange={onInputChange} value={values.size}>
+    <label>Pie Size:
+    <select onChange={onInputChange} value={values.sizes}>
         <option selected value='select'>
             Pick A Size
         </option>
@@ -108,12 +107,11 @@ return(
             onChange={onCheckboxChange}
           />
         </label>
-
         <label>
           Sausage
           <input
             type="checkbox"
-            name="ham"
+            name="sausage"
             checked={values.toppings.sausage}
             onChange={onCheckboxChange}
           />
@@ -139,21 +137,21 @@ return(
           <input
             type="checkbox"
             name="parm"
-            checked={values.toppings.cheddar}
+            checked={values.toppings.parmeasan}
             onChange={onCheckboxChange}
           />
         </label>
-   < label>Extras
+   < label> Extras:
    <select
         onChange={onInputChange}
         value={values.extras}
         name='extras'
         >
-            <option value=''> Options</option>
+            <option value=''>Pick some extras</option>
             <option value='ec'>Extra Cheese</option>
             <option value='es'>Extra Sauce</option>
             <option value='et'>Extra toppings</option>
-            <option value='none'>none</option>
+            <option value='none'>None</option>
             </select>
 </label>
 <label>Special Intructions:
@@ -164,7 +162,7 @@ return(
             onChange={onInputChange}
             />
         </label>
-    <label>Order type
+    <label>Order type:
         <select
         onChange={onInputChange}
         value={values.type}
@@ -176,7 +174,7 @@ return(
             </select>
     </label>
     <button>Submit</button>
-    /</div>
+    </div>
 </form>
 )
 }
